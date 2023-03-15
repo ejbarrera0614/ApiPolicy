@@ -54,8 +54,8 @@ public class PolicyTestRequirementsController : ControllerBase
     }
 
 
-    [HttpPost]
-    public async Task<IActionResult> Post(Policy policy)
+    [HttpPost("addPolicy")]
+    public async Task<IActionResult> AddPolicy(Policy policy)
     {
         try
         {

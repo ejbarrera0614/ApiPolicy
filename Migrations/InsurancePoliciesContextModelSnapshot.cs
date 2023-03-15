@@ -4,7 +4,6 @@ using InsurancePoliciesAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -12,11 +11,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InsurancePoliciesAPI.Migrations
 {
     [DbContext(typeof(InsurancePoliciesContext))]
-    [Migration("20230315034853_AddSeedData")]
-    partial class AddSeedData
+    partial class InsurancePoliciesContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -128,14 +125,17 @@ namespace InsurancePoliciesAPI.Migrations
                     b.Property<int>("MaxCoverage")
                         .HasColumnType("int");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PolicyNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ID");
 
                     b.HasIndex("PolicyNumber")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[PolicyNumber] IS NOT NULL");
 
                     b.ToTable("Policy", (string)null);
                 });
@@ -207,7 +207,6 @@ namespace InsurancePoliciesAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("NumberPlate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ID");
@@ -215,7 +214,8 @@ namespace InsurancePoliciesAPI.Migrations
                     b.HasIndex("CustomerID");
 
                     b.HasIndex("NumberPlate")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[NumberPlate] IS NOT NULL");
 
                     b.ToTable("Vehicle", (string)null);
                 });

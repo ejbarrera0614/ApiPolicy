@@ -5,7 +5,7 @@
 namespace InsurancePoliciesAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class AddSeedData : Migration
+    public partial class SeedDataDefault : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
