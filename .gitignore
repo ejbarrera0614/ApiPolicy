@@ -1,0 +1,52 @@
+# Archivos de configuración de Visual Studio
+.vs/
+/*.vspscc
+/*/*.dbmdl
+/*/*.jfm
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Carpeta de paquetes NuGet
+packages/
+
+# Archivos de compilación
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.exe.config
+*.nupkg
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+*.vsix
+*.zip
+*.rar
+*.7z
+
+# Archivos de publicación
+/wwwroot/
+/bin/
+/obj/
+
+# Archivos de registro
+*.log
+
+# Otros archivos y carpetas
+Thumbs.db
+Desktop.ini
+*.cache
+*.DS_Store
+*.bak
+*.TMP
+*.tmp
+*.userprefs
+*.csproj.user
+*.bak
+*.~*
+
+# Visual Studio Code
+.vscode/
